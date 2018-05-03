@@ -20,6 +20,5 @@
   "devDependencies": {
     "babel-plugin-import": "^1.7.0",
     "react-app-rewired": "^1.5.2"
-  },
-  "proxy": "http://tj.nineton.cn/"
+  }
 }
