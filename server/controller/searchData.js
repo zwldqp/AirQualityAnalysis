@@ -1,4 +1,7 @@
 const request = require('request');
+const util = require('../common/util');
+const news = require('../common/getNews');
+const air = require('../common/getAirQulity')
 
 const suibian = (ctx) => {
     return new Promise((resolve, rejected) => {
@@ -13,6 +16,17 @@ const searchData = async (ctx) => {
     ctx.response.body = zhi
 }
 
+const getNews = async (ctx, next) => {
+    // const date = util.getNowDate();
+    console.log(news.getNews());
+}
+
+const getAir = async (ctx, next) => {
+    air.getAir();
+}
+
 module.exports = {
-    searchData: searchData
+    searchData: searchData,
+    getNews: getNews,
+    getAir: getAir
 }

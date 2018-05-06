@@ -1,5 +1,5 @@
 const localServer = "127.0.0.1";
-const databaseName = "nefu_zhangqu";
+const databaseName = "airquality";
 const databaseUser = "root";
 const databasePassword = "aixiaozi1";
 

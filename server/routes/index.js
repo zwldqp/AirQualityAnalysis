@@ -9,6 +9,10 @@ router.get('/', async (ctx, next) => {
 
 router.get('/searchDataTest/:city', searchData.searchData)
 
+router.get('/getNewsTest', searchData.getNews)
+
+router.get('/getAirTest', searchData.getAir)
+
 router.get('/string', async (ctx, next) => {
   ctx.body = 'koa2 string'
 })
