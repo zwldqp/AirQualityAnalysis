@@ -17,6 +17,15 @@ const setAirInfo = async (air) => {
   return res;
 }
 
+const getAirInfo = async () => {      // 插入新闻
+  await client.startTransaction();
+  let sql = 'select * from everydaydata';
+  const res = await client.executeTransaction(sql, []);
+  await client.stopTransaction();
+  return res;
+}
+
 module.exports = {
-  setAirInfo: setAirInfo
+  setAirInfo: setAirInfo,
+  getAirInfo: getAirInfo
 }

@@ -2,6 +2,7 @@ const request = require('request');
 const util = require('../common/util');
 const news = require('../common/getNews');
 const air = require('../common/getAirQulity')
+const everyday = require('../models/everydaydata')
 
 const suibian = (ctx) => {
     return new Promise((resolve, rejected) => {
@@ -16,6 +17,11 @@ const searchData = async (ctx) => {
     ctx.response.body = zhi
 }
 
+const getAirQulityData = async (ctx) => {
+    const data = await everyday.getAirInfo();
+    ctx.response.body = data
+}
+
 const getNews = async (ctx, next) => {
     // const date = util.getNowDate();
     console.log(news.getNews());
@@ -28,5 +34,6 @@ const getAir = async (ctx, next) => {
 module.exports = {
     searchData: searchData,
     getNews: getNews,
-    getAir: getAir
+    getAir: getAir,
+    getAirQulityData: getAirQulityData
 }

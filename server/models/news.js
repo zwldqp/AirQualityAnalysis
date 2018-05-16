@@ -16,6 +16,15 @@ const setNews = async (news) => {      // 插入新闻
   return res;
 }
 
+const getNews = async () => {     
+  await client.startTransaction();
+  let sql = 'select * from news';
+  const res = await client.executeTransaction(sql, []);
+  await client.stopTransaction();
+  return res;
+}
+
 module.exports = {
-  setNews: setNews
+  setNews: setNews,
+  getNews: getNews
 }
