@@ -6,7 +6,7 @@ const setNews = async (news) => {      // 插入新闻
   for (let i = 0; i < news.length; i++) {
     let item = news[i];
     sql += ' select '
-    sql += 'null, "' + item.title + '", "' + item.link + '", now()';
+    sql += 'null, "' + item.title + '", "' + item.link + '", "' + item.date + '"';
     if (i !== news.length - 1) {
       sql += ' union';
     }

@@ -1,7 +1,7 @@
 const localServer = "127.0.0.1";
 const databaseName = "airquality";
 const databaseUser = "root";
-const databasePassword = "";
+const databasePassword = "aixiaozi1";
 
 module.exports = {
   localServer: localServer,
